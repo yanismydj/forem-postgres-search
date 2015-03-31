@@ -1,8 +1,8 @@
 <h2>Search <%= @forum.title %></h2>
 
-<%= form_tag search_forum_path(@forum), :method=>:get do %>
-  <%= text_field_tag :q, @search %>
-  <%= submit_tag "Search" %>
+<%= form_tag search_forum_path(@forum), :method => :get do %>
+  <%= text_field_tag :q, @search, class: 'form-control' %><br>
+  <%= submit_tag "Search", class: 'btn btn-primary' %>
 <% end %>
 
 <% if @topics.num_pages > 1 %>
@@ -10,7 +10,7 @@
     <%= t('forem.common.pages') -%>: <%= forem_paginate @topics %>
   </div>
 <% end %>
-<table class='topics subdued' cellspacing='0'>
+<table class='topics subdued table table-hover' cellspacing='0'>
   <thead>
     <tr>
       <th class="icon"></th>

@@ -1,5 +1,5 @@
-Forem::Engine.routes.append do
-  resources :forums, :only=> [:index, :show] do
-    member { get :search }
+Forem::Engine.routes.draw do
+  resources :forums, only: [:index, :show] do
+    get :search, on: :member
   end
 end
